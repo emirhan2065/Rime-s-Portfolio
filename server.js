@@ -18,7 +18,7 @@ app.post("/", (req, res) => {
     console.log(req.body);
 
     const transporter = nodemailer.createTransport({
-        service: 'hotmail',
+        service: 'https://smtp-emirhancebiroglu21@hotmail.com/',
         auth: {
             user: 'emirhancebiroglu21@hotmail.com',
             pass: 'Emirhan2165'
