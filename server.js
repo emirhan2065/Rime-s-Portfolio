@@ -1,7 +1,3 @@
-import express from "express";
-import nodeMailer from 'nodemailer';
-import bodyParser from 'body-parser';
-
 const express = require('express');
 const app = express();
 
@@ -12,8 +8,6 @@ const PORT = process.env.PORT || 5000;
 // Middleware
 app.use(express.static('public'));
 app.use(express.json());
-app.use(bodyParser.urlencoded({extended: true}));
-app.use(bodyParser.json());
 
 
 app.get('/', (req, res) => {
@@ -24,12 +18,10 @@ app.post("/", (req, res) => {
     console.log(req.body);
 
     const transporter = nodemailer.createTransport({
-        host: 'smtp.gmail.com',
-        port: 465,
-        secure: true,
+        service: 'gmail',
         auth: {
             user: 'rimeofcodes@gmail.com',
-            pass: 'Emirhan2165'
+            pass: 'bteeljwlsamqnyye'
         } 
     })
 
